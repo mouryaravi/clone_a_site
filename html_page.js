@@ -27,7 +27,7 @@ function parseAllLinks(url, self) {
       self.content = window.document.innerHTML;
       $("a[href]").each(function() {
         //console.log(" -", $(this).text(), " ", $(this).attr('href'));
-        var newLink = $(this).attr('href');
+        var newLink = $(this).prop('href');
         if (newLink.indexOf("/") === 0) {
           newLink = url.protocol + "//" + url.hostname + newLink;
         }
